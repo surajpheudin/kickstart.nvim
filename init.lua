@@ -803,6 +803,11 @@ require('lazy').setup({
           end
           return 'make install_jsregexp'
         end)(),
+        config = function()
+          require('luasnip.loaders.from_lua').load {
+            paths = '~/.config/nvim/lua/custom/plugins/snippets/',
+          }
+        end,
         dependencies = {
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
