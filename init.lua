@@ -202,8 +202,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>st', function()
   vim.cmd.vnew()
   vim.cmd.term()
-  vim.cmd.wincmd 'J'
-  vim.api.nvim_win_set_height(0, 15)
+  vim.cmd.wincmd 'L'
 end)
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
