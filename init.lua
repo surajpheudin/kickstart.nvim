@@ -240,6 +240,9 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
+-- NOTE: My custom uitlities
+require("custom.floaterminal")
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
