@@ -205,6 +205,10 @@ vim.keymap.set('n', '<leader>st', function()
   vim.cmd.wincmd 'L'
 end)
 
+vim.keymap.set('n', '<leader>se', function()
+  vim.diagnostic.open_float()
+end)
+
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
@@ -240,8 +244,8 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
--- NOTE: My custom uitlities
-require("custom.floaterminal")
+-- NOTE: My custom utilities
+require 'custom.floaterminal'
 
 -- [[ Configure and install plugins ]]
 --
