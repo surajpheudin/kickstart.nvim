@@ -16,7 +16,7 @@ local function open_sidebar()
   local width = math.floor(25)
   vim.api.nvim_win_set_width(win, width)
 
-  -- Open oil in the sidebar if not already a oil
+  -- Open oil in the sidebar if not already a open
   if vim.bo[buf].buftype ~= 'oil' then
     vim.cmd.Oil()
     -- Get the new oil buffer
