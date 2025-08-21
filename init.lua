@@ -246,6 +246,7 @@ rtp:prepend(lazypath)
 
 -- NOTE: My custom utilities
 require 'custom.floaterminal'
+require 'custom.sidebar'
 
 -- [[ Configure and install plugins ]]
 --
