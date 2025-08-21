@@ -1,6 +1,5 @@
 local state = {
   sidebar = {
-    buf = -1,
     win = -1,
   },
 }
@@ -8,22 +7,15 @@ local state = {
 local function open_sidebar()
   -- Create a vertical split on the left side
   vim.cmd 'leftabove vsplit'
-
-  -- Get the newly created window and buffer
-  local win = vim.api.nvim_get_current_win()
-  local buf = vim.api.nvim_get_current_buf()
+  vim.cmd.Oil()
 
   local width = math.floor(25)
+  local win = vim.api.nvim_get_current_win()
+
   vim.api.nvim_win_set_width(win, width)
+  vim.api.nvim_set_option_value('winfixwidth', true, { win = win })
 
-  -- Open oil in the sidebar if not already a open
-  if vim.bo[buf].buftype ~= 'oil' then
-    vim.cmd.Oil()
-    -- Get the new oil buffer
-    buf = vim.api.nvim_get_current_buf()
-  end
-
-  return { buf = buf, win = win }
+  return { win = win }
 end
 
 local function close_sidebar()
@@ -33,7 +25,7 @@ local function close_sidebar()
 end
 
 local function toggle_sidebar()
-  if state.sidebar.win ~= -1 and vim.api.nvim_win_is_valid(state.sidebar.win) then
+  if vim.api.nvim_win_is_valid(state.sidebar.win) then
     close_sidebar()
     state.sidebar = { buf = -1, win = -1 }
   else
