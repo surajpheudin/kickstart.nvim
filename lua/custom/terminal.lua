@@ -35,4 +35,4 @@ local function toggle_sidebar_terminal()
   end
 end
 
-vim.keymap.set({ 'n', 't' }, '<leader>st', toggle_sidebar_terminal)
+vim.keymap.set({ 'n' }, '<leader>st', toggle_sidebar_terminal)
