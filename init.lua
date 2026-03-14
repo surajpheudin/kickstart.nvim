@@ -685,7 +685,25 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        rust_analyzer = {},
+        rust_analyzer = {
+          settings = {
+            ['rust-analyzer'] = {
+              -- Other Settings ...
+              cargo = {
+                features = 'all', -- Enable all features
+              },
+              procMacro = {
+                ignored = {
+                  leptos_macro = {
+                    -- optional: --
+                    -- "component",
+                    'server',
+                  },
+                },
+              },
+            },
+          },
+        },
         tailwindcss = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -787,6 +805,7 @@ require('lazy').setup({
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
         typescript = { 'prettierd', 'prettier', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+        html = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
