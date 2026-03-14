@@ -203,7 +203,6 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>se', function()
   vim.diagnostic.open_float()
 end)
-vim.keymap.set('n', '<leader>e', ':Neotree reveal<CR>')
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })

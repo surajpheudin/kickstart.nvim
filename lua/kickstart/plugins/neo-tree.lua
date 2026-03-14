@@ -14,6 +14,7 @@ return {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
+    enable_git_status = false, -- disable git status icons
     filesystem = {
       window = {
         mappings = {
